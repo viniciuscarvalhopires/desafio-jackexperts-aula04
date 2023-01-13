@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "desafio-aula04.name" -}}
+{{- define "desafio-vinicius.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "desafio-aula04.fullname" -}}
+{{- define "desafio-vinicius.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,16 +26,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "desafio-aula04.chart" -}}
+{{- define "desafio-vinicius.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "desafio-aula04.labels" -}}
-helm.sh/chart: {{ include "desafio-aula04.chart" . }}
-{{ include "desafio-aula04.selectorLabels" . }}
+{{- define "desafio-vinicius.labels" -}}
+helm.sh/chart: {{ include "desafio-vinicius.chart" . }}
+{{ include "desafio-vinicius.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -45,17 +45,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "desafio-aula04.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "desafio-aula04.name" . }}
+{{- define "desafio-vinicius.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "desafio-vinicius.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "desafio-aula04.serviceAccountName" -}}
+{{- define "desafio-vinicius.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "desafio-aula04.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "desafio-vinicius.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}

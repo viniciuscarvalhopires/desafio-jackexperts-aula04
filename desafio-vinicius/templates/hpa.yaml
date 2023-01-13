@@ -2,14 +2,14 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "desafio-aula04.fullname" . }}
+  name: {{ include "desafio-vinicius.fullname" . }}
   labels:
-    {{- include "desafio-aula04.labels" . | nindent 4 }}
+    {{- include "desafio-vinicius.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "desafio-aula04.fullname" . }}
+    name: {{ include "desafio-vinicius.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:
