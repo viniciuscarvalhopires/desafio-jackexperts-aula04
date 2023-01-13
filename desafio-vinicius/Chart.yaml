@@ -1,6 +1,6 @@
 apiVersion: v2
 name: desafio-vinicius
-description: A Helm chart for Kubernetes
+description: Chart healm para desafio da jackexperts
 
 # A chart can be either an 'application' or a 'library' chart.
 #
