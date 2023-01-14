@@ -22,4 +22,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag vinicpires/vinicius-jackexperts:v3
     - name: Docker push
-      run: docker push ${{secrets.DOCKER_USER}}/vinicius-jackexperts
+      run: docker push ${{secrets.DOCKER_USER}}/vinicius-jackexperts:v3
