@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: vinicpires/vinicius-jackexperts@v3
+    - uses: vinicpires/vinicius-jackexperts
     - name: Image for pipeline
       run: docker build . --file Dockerfile --tag vinicius-jackexperts:$(date +%s)
   
